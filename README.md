@@ -5,5 +5,5 @@
 Click the button below to deploy this template directly to your Azure subscription:
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](
-https://portal.azure.com/#create/Microsoft.Template/uri/https://raw.githubusercontent.com/AmpedData/DatabaseChex-Onboarding-Template/main/ARMTemplate/AzureLightHouseDelegationTemplate.json
+https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAmpedData%2FDatabaseChex-Onboarding-Template%2Fmain%2FARMTemplate%2FAzureLightHouseDelegationTemplate.json
 )
