@@ -7,18 +7,14 @@
    "metadata": {
     "description": "Specify a unique name for your offer"
    },
-   "defaultValue": "Amped Data Solutions Delegation"
+   "defaultValue": "Database Chex Delegation"
   },
   "mspOfferDescription": {
    "type": "string",
    "metadata": {
     "description": "Name of the Managed Service Provider offering"
    },
-   "defaultValue": "Allows Amped Data Solutions to manage customer resources securely through Azure Lighthouse."
-  },
-  "rgName": {
-   "type": "string",
-   "defaultValue": "rg-dbchex-dev-eastus2"
+   "defaultValue": "Allows Database Chex to manage customer resources securely through Azure Lighthouse."
   }
  },
  "variables": {
@@ -26,6 +22,21 @@
   "mspAssignmentName": "[guid(parameters('mspOfferName'))]",
   "managedByTenantId": "40d97b94-2ae6-4685-831f-93213565c3dc",
   "authorizations": [
+   {
+    "principalId": "25bd26ae-43a9-4985-b54c-c889a7f8d19a",
+    "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+    "principalIdDisplayName": "Engineering Group"
+   },
+   {
+    "principalId": "25bd26ae-43a9-4985-b54c-c889a7f8d19a",
+    "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
+    "principalIdDisplayName": "Engineering Group"
+   },
+   {
+    "principalId": "25bd26ae-43a9-4985-b54c-c889a7f8d19a",
+    "roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46",
+    "principalIdDisplayName": "Engineering Group"
+   },
    {
     "principalId": "1c93231a-6dde-4350-8f9f-a7fb111a62fe",
     "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
@@ -35,6 +46,16 @@
     "principalId": "1c93231a-6dde-4350-8f9f-a7fb111a62fe",
     "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
     "principalIdDisplayName": "appreg-dbchex-github-dev"
+   },
+   {
+    "principalId": "8a41d66d-e17b-4b32-a882-17ffb5bda4fc",
+    "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+    "principalIdDisplayName": "appreg-dbchex-lighthouse-dev"
+   },
+   {
+    "principalId": "8a41d66d-e17b-4b32-a882-17ffb5bda4fc",
+    "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
+    "principalIdDisplayName": "appreg-dbchex-lighthouse-dev"
    }
   ]
  },
@@ -51,30 +72,14 @@
    }
   },
   {
-   "type": "Microsoft.Resources/deployments",
-   "apiVersion": "2018-05-01",
-   "name": "rgAssignment",
-   "resourceGroup": "[parameters('rgName')]",
+   "type": "Microsoft.ManagedServices/registrationAssignments",
+   "apiVersion": "2020-02-01-preview",
+   "name": "[variables('mspAssignmentName')]",
    "dependsOn": [
     "[resourceId('Microsoft.ManagedServices/registrationDefinitions/', variables('mspRegistrationName'))]"
    ],
    "properties": {
-    "mode": "Incremental",
-    "template": {
-     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-     "contentVersion": "1.0.0.0",
-     "parameters": {},
-     "resources": [
-      {
-       "type": "Microsoft.ManagedServices/registrationAssignments",
-       "apiVersion": "2020-02-01-preview",
-       "name": "[variables('mspAssignmentName')]",
-       "properties": {
-        "registrationDefinitionId": "[resourceId('Microsoft.ManagedServices/registrationDefinitions/', variables('mspRegistrationName'))]"
-       }
-      }
-     ]
-    }
+    "registrationDefinitionId": "[resourceId('Microsoft.ManagedServices/registrationDefinitions/', variables('mspRegistrationName'))]"
    }
   }
  ],
