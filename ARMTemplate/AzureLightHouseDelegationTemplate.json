@@ -7,14 +7,14 @@
    "metadata": {
     "description": "Specify a unique name for your offer"
    },
-   "defaultValue": "Database Chex Delegation"
+   "defaultValue": "Database Chex Delegation-Prod"
   },
   "mspOfferDescription": {
    "type": "string",
    "metadata": {
     "description": "Name of the Managed Service Provider offering"
    },
-   "defaultValue": "Allows Database Chex to manage customer resources securely through Azure Lighthouse."
+   "defaultValue": "Allows Database Chex to manage customer resources securely through Azure Lighthouse in Prod."
   }
  },
  "variables": {
@@ -38,14 +38,14 @@
     "principalIdDisplayName": "Engineering Group"
    },
    {
-    "principalId": "8a41d66d-e17b-4b32-a882-17ffb5bda4fc",
+    "principalId": "a080b8ee-e983-4604-9382-f10d67a9c998",
     "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
-    "principalIdDisplayName": "appreg-dbchex-lighthouse-dev"
+    "principalIdDisplayName": "appreg-dbchex-lighthouse-prod"
    },
    {
-    "principalId": "8a41d66d-e17b-4b32-a882-17ffb5bda4fc",
+    "principalId": "a080b8ee-e983-4604-9382-f10d67a9c998",
     "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
-    "principalIdDisplayName": "appreg-dbchex-lighthouse-dev"
+    "principalIdDisplayName": "appreg-dbchex-lighthouse-prod"
    }
   ]
  },
