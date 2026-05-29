@@ -40,12 +40,12 @@
    {
     "principalId": "8a41d66d-e17b-4b32-a882-17ffb5bda4fc",
     "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
-    "principalIdDisplayName": "appreg-dbchex-lighthouse-dev"
+    "principalIdDisplayName": "DatabaseChex-Dev"
    },
    {
     "principalId": "8a41d66d-e17b-4b32-a882-17ffb5bda4fc",
     "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
-    "principalIdDisplayName": "appreg-dbchex-lighthouse-dev"
+    "principalIdDisplayName": "DatabaseChex-Dev"
    }
   ]
  },
